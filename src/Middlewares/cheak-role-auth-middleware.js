@@ -1,30 +1,4 @@
-// const checkRole = (role) => {
-//   return async (req, res, next) => {
-//       try {
-//           if (req.user) {
-//               const user = await User.findById(req.user._id).populate('roles');
-//               const hasRole = user.roles.some((r) => r.name === req.params.roleName && r.isAdmin);
 
-//               // Extract role name from the token
-//               const tokenRoleName = req.user.roleName;
-
-//               // Compare the extracted role name with the expected role name
-//               if (hasRole && tokenRoleName === role) {
-//                   next();
-//               } else {
-//                   res.status(403).json({ message: 'Permission denied' });
-//               }
-//           } else {
-//               res.status(403).json({ message: 'Permission denied' });
-//           }
-//       } catch (error) {
-//           console.error(error);
-//           res.status(500).json({ message: 'Internal server error' });
-//       }
-//   };
-// };
-
-// module.exports = { checkRole };
 const jwt = require('jsonwebtoken');
 const User = require('../Models/user.model');
 
